@@ -1,0 +1,6 @@
+{
+  "name": "PharmaDoc Pro - Vademécum Farmacológico Interactivo",
+  "description": "Vademécum clínico interactivo para profesionales de la salud. Consulta y actualiza medicamentos, presentaciones, mecanismos de acción, posología, efectos adversos e interacciones farmacológicas con búsqueda rápida.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
