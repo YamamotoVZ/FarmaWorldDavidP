@@ -1,7 +1,7 @@
 import { Medication } from '../../types/medication';
 
-const VIAL_IMG = '/src/assets/images/medication_ampoule_vial_1793310913789.jpg';
-const BLISTER_IMG = '/src/assets/images/medication_blister_tablets_1793310902804.jpg';
+const VIAL_IMG = '/assets/images/medication_ampoule_vial_1793310913789.jpg';
+const BLISTER_IMG = '/assets/images/medication_blister_tablets_1793310902804.jpg';
 
 export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   // ----------------------------------------------------
@@ -9,10 +9,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   // ----------------------------------------------------
   {
     id: 'nistatina',
-    genericName: 'Nistatina',
-    commercialNames: ['Mycostatin', 'Nistatina Braun', 'Candio-Hermal', 'Lederle Nistatina'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Suspensión oral y comprimidos de Nistatina',
+    genericName: "Nistatina",
+    commercialNames: ["Micostatina", "Bistatin-V"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVjdyzaCzj2ym6-JsJsjkvQf-ZNUPmVWAKlNCWcvDBw&s=10",
+    imageAlt: "Nistatina - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVjdyzaCzj2ym6-JsJsjkvQf-ZNUPmVWAKlNCWcvDBw&s=10", "https://images-products.vitau.mx/7501563310450.jpeg"],
     atcCode: 'A07AA02',
     anatomicalSystem: '4.3 Antimicóticos tópicos y orales',
     therapeuticClass: 'Antimicótico poliénico bactericida y fungistático no absorbible',
@@ -73,10 +74,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'tolnaftato',
-    genericName: 'Tolnaftato',
-    commercialNames: ['Tinactin', 'Aftate', 'Tinaderm', 'Tolnaderm'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Tubo de crema y polvo dérmico de Tolnaftato',
+    genericName: "Tolnaftato",
+    commercialNames: ["Tinactin"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpuVoJcsQ90r9DpnbdDsyPGa_cWxqir4J1H7vARg4ZV48QIsVA_CAHBeI&s=10",
+    imageAlt: "Tolnaftato - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpuVoJcsQ90r9DpnbdDsyPGa_cWxqir4J1H7vARg4ZV48QIsVA_CAHBeI&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi0kCmD6K2W45xLeUega3Hq40bUwWVBnuPORnrWyMFQg&s=10"],
     atcCode: 'D01AE18',
     anatomicalSystem: '4.3 Antimicóticos tópicos y orales',
     therapeuticClass: 'Antifúngico tiocarbamato sintético para dermatofitosis superficiales',
@@ -134,10 +136,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'imidazoles-clotrimazol-ketoconazol-miconazol',
-    genericName: 'Imidazoles: Ketoconazol, Clotrimazol, Miconazol',
-    commercialNames: ['Canesten (Clotrimazol)', 'Nizoral (Ketoconazol)', 'Daktarin (Miconazol)', 'Gyno-Daktarin'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Cremas dérmicas, óvulos y comprimidos del grupo de los Imidazoles',
+    genericName: "Imidazoles: Ketoconazol, Clotrimazol, Miconazol",
+    commercialNames: ["Medicasp (K)", "Lomecan (C)", "Menazan (M)"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTchNwIMKfApZVk70AttnaKtetVF6tHCGAG-GIgVRbXymQ0mbZz-mFEbSJi&s=10",
+    imageAlt: "Imidazoles: Ketoconazol, Clotrimazol, Miconazol - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTchNwIMKfApZVk70AttnaKtetVF6tHCGAG-GIgVRbXymQ0mbZz-mFEbSJi&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ71RRKZccTiLrmW4y4NKMLcipvXRME2mI9ZZ2Xn6yMezfViIEy8wZgWkc&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlli664CJRMNzkTMFKSMFaVubNAyxo1bPI_LWO8M0R9g&s=10"],
     atcCode: 'D01AC08',
     anatomicalSystem: '4.3 Antimicóticos tópicos y orales',
     therapeuticClass: 'Antifúngicos azólicos imidazólicos inhibidores de la 14-alfa-desmetilasa',
@@ -202,10 +205,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'anfotericina-b',
-    genericName: 'Anfotericina B (Complejo Lipídico / Liposomal / Desoxicolato)',
-    commercialNames: ['AmBisome (Liposomal)', 'Abelcet (Complejo Lipídico)', 'Fungizone (Desoxicolato convencional)'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Vial de infusión de Anfotericina B Liposomal polvo liofilizado',
+    genericName: "Anfotericina B",
+    commercialNames: ["Candipres. Ambisome", "Anfakir"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6l_AIPWa3F6_IluUGWE5iSh6W-yppeTcbjaszMwpxJxvc3GTG-G_XAx4&s=10",
+    imageAlt: "Anfotericina B - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6l_AIPWa3F6_IluUGWE5iSh6W-yppeTcbjaszMwpxJxvc3GTG-G_XAx4&s=10", "https://curitek.com/wp-content/uploads/2025/01/ANFAKAIR-50-MG-INYECTABLE-AMFOTERICINA-B.jpg?v=1739223795", "https://www.plmconnection.com/plmservices/PharmaSearchEngine/Mexico/DEF/SIDEF/400x400/stendhal_ambisome_solinyeciv_cj1fc50mg.png"],
     atcCode: 'J02AA01',
     anatomicalSystem: '4.3 Antimicóticos tópicos y orales',
     therapeuticClass: 'Antifúngico poliénico parenteral de máximo espectro fungicida para micosis invasivas',
@@ -266,10 +270,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'equinocandinas-caspofungina-anidulafungina-micafungina',
-    genericName: 'Equinocandinas: Caspofungina, Anidulafungina, Micafungina',
-    commercialNames: ['Cancidas (Caspofungina)', 'Eraxis / Ecalta (Anidulafungina)', 'Mycamine (Micafungina)'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Viales de infusión intravenosa de la familia de las Equinocandinas',
+    genericName: "Equinocandinas: Caspofungina, Anidulafungina, Micafungina",
+    commercialNames: ["Suvepur (C)", "Mycamine (M)", "Equaltha (A)"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJkgiX6yaMj99TZJFckULNhlmK4d_95Dk_VYSI1dKbw&s=10",
+    imageAlt: "Equinocandinas: Caspofungina, Anidulafungina, Micafungina - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJkgiX6yaMj99TZJFckULNhlmK4d_95Dk_VYSI1dKbw&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYXwEtxZgt2kt3hyZHKpReXb_bf--W3PdFk1G_uNdQQKqG1QLWmbF-aCY&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTArJKwFHgHfhPZS-WPYo3qq205tJ7j-b5ro1xpJxvY7Q&s=10"],
     atcCode: 'J02AX04',
     anatomicalSystem: '4.3 Antimicóticos tópicos y orales',
     therapeuticClass: 'Antifúngicos lipopéptidos cíclicos inhibidores de la síntesis de beta-(1,3)-D-glucano',
@@ -334,10 +339,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   // ----------------------------------------------------
   {
     id: 'zidovudina',
-    genericName: 'Zidovudina (AZT / Azidotimidina)',
-    commercialNames: ['Retrovir', 'Zidovudina Combivir (con Lamivudina)', 'Zidovudina Richmond'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Cápsulas y ampollas inyectables de Zidovudina (AZT)',
+    genericName: "Zidovudina",
+    commercialNames: ["Retrovir"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVfuR6cI3i3hF5NRVK4t3mTc8BeeWqvIdtENtVIo97OIu4fr9EGqAqyg0&s=10",
+    imageAlt: "Zidovudina - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVfuR6cI3i3hF5NRVK4t3mTc8BeeWqvIdtENtVIo97OIu4fr9EGqAqyg0&s=10"],
     atcCode: 'J05AF01',
     anatomicalSystem: '4.4 Antivirales',
     therapeuticClass: 'Antirretroviral inhibidor nucleosídico de la transcriptasa inversa (INTR / NRTI)',
@@ -400,10 +406,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'aciclovir',
-    genericName: 'Aciclovir (Acicloguanosina)',
-    commercialNames: ['Zovirax', 'Virmen', 'Aciclovir Sandoz', 'Maynar'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos, viales de infusión y crema de Aciclovir',
+    genericName: "Aciclovir",
+    commercialNames: ["Isavir", "Cicloferon", "Zovirax"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_ytVwfd8F6KMkGMi9jhWKlh9gcy57kCcZkSwRD4-XoSE_2hfYD_g2Ccl&s=10",
+    imageAlt: "Aciclovir - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_ytVwfd8F6KMkGMi9jhWKlh9gcy57kCcZkSwRD4-XoSE_2hfYD_g2Ccl&s=10", "https://production-media.fahorro.com/media/catalog/product/7/5/7501299300107_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265", "https://production-media.fahorro.com/media/catalog/product/7/5/7501046482490_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144"],
     atcCode: 'J05AB01',
     anatomicalSystem: '4.4 Antivirales',
     therapeuticClass: 'Antiviral análogo de nucleósido acíclico inhibidor selectivo de ADN polimerasa de Herpesviridae',
@@ -464,10 +471,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'ribavirina',
-    genericName: 'Ribavirina (Tribavirina)',
-    commercialNames: ['Copegus', 'Rebetol', 'Virazole', 'Ribavirina Teva'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Cápsulas orales de Ribavirina de 200 mg',
+    genericName: "Ribavirina",
+    commercialNames: ["Vilona", "Virazide"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3RqXeFLTa918aqkgPfnJCyyyvF5B9C-6JWHZDTAECqcF5NfCUGKSkxmI&s=10",
+    imageAlt: "Ribavirina - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3RqXeFLTa918aqkgPfnJCyyyvF5B9C-6JWHZDTAECqcF5NfCUGKSkxmI&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ384MOWchyTiNnQ12bkQvWc7gIgSSwz1S6Q2D2_ATmqm8kO1vGGj7hegs&s=10"],
     atcCode: 'J05AB04',
     anatomicalSystem: '4.4 Antivirales',
     therapeuticClass: 'Antiviral análogo de guanosina de amplio espectro frente a virus ARN y ADN',
@@ -530,10 +538,11 @@ export const ANTIMICOTICOS_ANTIVIRALES: Medication[] = [
   },
   {
     id: 'amantadina',
-    genericName: 'Amantadina Clorhidrato',
-    commercialNames: ['Symmetrel', 'Amantadina Level', 'PK-Merz', 'Gocovri'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Cápsulas de Amantadina Clorhidrato de 100 mg',
+    genericName: "Amantadina",
+    commercialNames: ["PK-Merz", "Kinestrel", "Antiflu-des", "Rosel"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeiPd-dIDBB3CDbKJyyev4slrDPD_fzIjVpMK1h1qRdBjBS7ea8TnjoKiZ&s=10",
+    imageAlt: "Amantadina - Presentación farmacológica",
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeiPd-dIDBB3CDbKJyyev4slrDPD_fzIjVpMK1h1qRdBjBS7ea8TnjoKiZ&s=10", "https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS/wcs/products/959367_A_1280_AL.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7fw8rrmK4oYmjnjJh6d4XikRu4H13rNNoY-1X9KSGnMarQDkQY11LdAQh&s=10", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8p7qE_QwrT5MYvoKhaSsGqqYJHuzlPf4-uAOaB1diMhfvMATpXjYGS8I&s=10"],
     atcCode: 'N04BB01',
     anatomicalSystem: '4.4 Antivirales',
     therapeuticClass: 'Antiviral bloqueador del canal M2 del virus de la gripe A y antiparkinsoniano dopaminérgico/antiglutamatérgico',

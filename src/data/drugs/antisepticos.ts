@@ -1,7 +1,7 @@
 import { Medication } from '../../types/medication';
 
-const VIAL_IMG = '/src/assets/images/medication_ampoule_vial_1793310913789.jpg';
-const BLISTER_IMG = '/src/assets/images/medication_blister_tablets_1793310902804.jpg';
+const VIAL_IMG = '/assets/images/medication_ampoule_vial_1793310913789.jpg';
+const BLISTER_IMG = '/assets/images/medication_blister_tablets_1793310902804.jpg';
 
 export const ANTISEPTICOS: Medication[] = [
   // ----------------------------------------------------
@@ -9,10 +9,10 @@ export const ANTISEPTICOS: Medication[] = [
   // ----------------------------------------------------
   {
     id: 'povidona-yodada',
-    genericName: 'Povidona Yodada (Iodopovidona / Polividona Yodada)',
-    commercialNames: ['Betadine', 'Isodine', 'Braunol', 'Poviderm'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Frasco de solución antiséptica dérmica de Povidona Yodada',
+    genericName: "Povidona Yodada (Iodopovidona / Polividona Yodada)",
+    commercialNames: ["Betadine", "Isodine"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuwWsckssFoJGHcRhWcNzPwJh23FmesKh2jwNhcKJeR2Zd4sXUnULvAG9Z&s=10",
+    imageAlt: "Povidona Yodada (Iodopovidona / Polividona Yodada) - Presentación farmacológica",
     atcCode: 'D08AG02',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Antiséptico y desinfectante halogenado liberador de yodo libre (yodóforo)',
@@ -76,10 +76,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'hipoclorito-sodico',
-    genericName: 'Hipoclorito Sódico (Solución de Dakin / Cloro Líquido)',
-    commercialNames: ['Solución de Dakin', 'Amukina', 'Hypochlorite Sodique Braun', 'Milton'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Solución desinfectante de Hipoclorito Sódico diluido',
+    genericName: "Hipoclorito Sódico",
+    commercialNames: ["Solución de Dakin", "Microdacyn"],
+    imageUrl: "https://m.media-amazon.com/images/I/71UxjZXFkOL.jpg",
+    imageAlt: "Hipoclorito Sódico - Presentación farmacológica",
     atcCode: 'D08AX07',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Antiséptico y desinfectante clorado oxidante de amplio espectro',
@@ -140,10 +140,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'benzalconio-benzetonio',
-    genericName: 'Cloruro de Benzalconio y Benzetonio',
-    commercialNames: ['Bactine', 'Merthiolate Antiséptico Incoloro', 'Dettol Cloruro', 'Bacti-Cide'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Solución spray antiséptica incolora de Cloruro de Benzalconio',
+    genericName: "Cloruro de Benzalconio y Benzetonio",
+    commercialNames: ["Bactine", "Merthiolate", "Dermocleen"],
+    imageUrl: "https://www.degasa.com/wp-content/uploads/2024/05/DermocleenConcentrado.jpg",
+    imageAlt: "Cloruro de Benzalconio y Benzetonio - Presentación farmacológica",
     atcCode: 'D08AJ01',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Antiséptico catiónico surfactante de amonio cuaternario',
@@ -202,10 +202,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'peroxido-hidrogeno',
-    genericName: 'Peróxido de Hidrógeno (Agua Oxigenada al 3% - 10 Volúmenes)',
-    commercialNames: ['Agua Oxigenada 10 Vol.', 'Cikaderma', 'Forex Agua Oxigenada'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Frasco de plástico opaco de Peróxido de Hidrógeno al 3%',
+    genericName: "Peróxido de Hidrógeno (Agua Oxigenada al 3% - 10 Volúmenes)",
+    commercialNames: ["Cikaderma", "Forex Agua Oxigenada"],
+    imageUrl: "https://farmaciassimilaresmx.vtexassets.com/arquivos/ids/159877/1341.png?v=638494173205070000",
+    imageAlt: "Peróxido de Hidrógeno (Agua Oxigenada al 3% - 10 Volúmenes) - Presentación farmacológica",
     atcCode: 'D08AX01',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Antiséptico oxidante y agente hemostático capilar efervescente',
@@ -262,10 +262,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'clorhexidina',
-    genericName: 'Clorhexidina Digluconato',
-    commercialNames: ['Hibiscrub', 'Bactiseptic', 'Cristalmina', 'Corsodyl', 'Peridont'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Solución acuosa y jabonosa de Clorhexidina Digluconato al 2%',
+    genericName: "Clorhexidina",
+    commercialNames: ["Bactiseptic", "Cristalmina", "Corsodyl", "Peridont"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNaXK9D7k1pFX4GvGMch04GZa3rfbHdZRfXtroOjpc7H5S7AY5tLR87LUw&s=10",
+    imageAlt: "Clorhexidina - Presentación farmacológica",
     atcCode: 'D08AC02',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Antiséptico bisbiguanida catiónico de amplio espectro y alta sustantividad',
@@ -331,10 +331,10 @@ export const ANTISEPTICOS: Medication[] = [
   // ----------------------------------------------------
   {
     id: 'nitrofurantoina',
-    genericName: 'Nitrofurantoína Macrocristalina',
-    commercialNames: ['Furadantina', 'Macrodantina', 'Macrobid', 'Furantoína'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Cápsulas de Nitrofurantoína macrocristalina en blíster',
+    genericName: "Nitrofurantoína",
+    commercialNames: ["Furadantina", "Macrodantina"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw7KocKoGqdyut6iNJb3tBfd_oS7s8IA9CLIdbZJxViA&s=10",
+    imageAlt: "Nitrofurantoína - Presentación farmacológica",
     atcCode: 'J01XE01',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Antibacteriano y antiséptico urinario nitrofuranico bactericida de vías bajas',
@@ -396,10 +396,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'acido-nalidixico',
-    genericName: 'Ácido Nalidíxico (Fluoroquinolona de 1ª Generación)',
-    commercialNames: ['Wintomylon', 'Nalix', 'NegGram'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos orales de Ácido Nalidíxico',
+    genericName: "Ácido Nalidíxico (Fluoroquinolona de 1ª Generación)",
+    commercialNames: ["Nalix", "Nalixone"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5EP7pwlvttC-omzJOBHirg4VZIuN6iLnBqDEuzs7fRrfIp_Wi5FVHifUD&s=10",
+    imageAlt: "Ácido Nalidíxico (Fluoroquinolona de 1ª Generación) - Presentación farmacológica",
     atcCode: 'J01MB02',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Quinolona no fluorada de 1ª generación / antiséptico urinario',
@@ -457,10 +457,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'ciprofloxacino',
-    genericName: 'Ciprofloxacino Clorhidrato (Fluoroquinolona de 2ª Generación)',
-    commercialNames: ['Cipro', 'Baycip', 'Ciproxina', 'Rigoran'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Blíster de comprimidos recubiertos de Ciprofloxacino de 500 mg',
+    genericName: "Ciprofloxacino  (Fluoroquinolona de 2ª Generación)",
+    commercialNames: ["Ciproxina", "Ciproflox"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzNJ4FR3WlIEzAfKxjs8J9ELixgm_zhGYvgv_lZFCj06hMd3AeKkF95ZA&s=10",
+    imageAlt: "Ciprofloxacino  (Fluoroquinolona de 2ª Generación) - Presentación farmacológica",
     atcCode: 'J01MA02',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Fluoroquinolona de 2ª generación con máxima potencia frente a gramnegativos y Pseudomonas',
@@ -524,10 +524,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'levofloxacino',
-    genericName: 'Levofloxacino (Fluoroquinolona de 3ª Generación / Respiratoria)',
-    commercialNames: ['Tavanic', 'Levaquin', 'Elequine', 'Ducressa'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Blíster de comprimidos de Levofloxacino de 500 mg',
+    genericName: "Levofloxacino (Fluoroquinolona de 3ª Generación / Respiratoria)",
+    commercialNames: ["Lefloxin", "Bredelin"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRigfWj8eOoofci5qegYw0hHGPBitk2101c-NYhnbocSg&s=10",
+    imageAlt: "Levofloxacino (Fluoroquinolona de 3ª Generación / Respiratoria) - Presentación farmacológica",
     atcCode: 'J01MA12',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Fluoroquinolona de 3ª generación ("quinolona respiratoria") con excelente actividad neumocócica',
@@ -592,10 +592,10 @@ export const ANTISEPTICOS: Medication[] = [
   },
   {
     id: 'moxifloxacino',
-    genericName: 'Moxifloxacino Clorhidrato (Fluoroquinolona de 4ª Generación)',
-    commercialNames: ['Avelox', 'Actira', 'Octegra', 'Vigamox (colirio)'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Blíster de comprimidos de Moxifloxacino de 400 mg',
+    genericName: "Moxifloxacino  (Fluoroquinolona de 4ª Generación)",
+    commercialNames: ["Avelox", "Vigamox"],
+    imageUrl: "https://i5-mx.walmartimages.com/asr/5a3ee349-ca8b-47ce-955d-72153a42964b.5261ca2b8815956823d94a5e8ecd74de.jpeg",
+    imageAlt: "Moxifloxacino  (Fluoroquinolona de 4ª Generación) - Presentación farmacológica",
     atcCode: 'J01MA14',
     anatomicalSystem: '4.1 Antisépticos',
     therapeuticClass: 'Fluoroquinolona de 4ª generación de amplio espectro anaeróbico y respiratorio',

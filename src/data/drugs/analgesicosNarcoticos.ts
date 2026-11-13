@@ -1,15 +1,16 @@
 import { Medication } from '../../types/medication';
 
-const VIAL_IMG = '/src/assets/images/medication_ampoule_vial_1793310913789.jpg';
-const BLISTER_IMG = '/src/assets/images/medication_blister_tablets_1793310902804.jpg';
+const VIAL_IMG = '/assets/images/medication_ampoule_vial_1793310913789.jpg';
+const BLISTER_IMG = '/assets/images/medication_blister_tablets_1793310902804.jpg';
 
 export const ANALGESICOS_NARCOTICOS: Medication[] = [
   {
     id: 'morfina',
-    genericName: 'Morfina',
-    commercialNames: ['MST Continus', 'Sevredol', 'Oramorph', 'Morfina Braun'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Ampollas de Morfina 1% inyectable',
+    genericName: "Morfina",
+    commercialNames: ["Biogenfine", "Analfin"],
+    imageUrl: "https://wecarepharma.mx/cdn/shop/files/biogenfine-morfina-tabletas-10mg-con-20-7501384501297_a2bf53d2-f9c6-4d35-ba22-8a6007bb147a_1200x894.jpg?v=1744716256",
+    imageAlt: "Morfina - Presentación farmacológica",
+    images: ["https://wecarepharma.mx/cdn/shop/files/biogenfine-morfina-tabletas-10mg-con-20-7501384501297_a2bf53d2-f9c6-4d35-ba22-8a6007bb147a_1200x894.jpg?v=1744716256"],
     atcCode: 'N02AA01',
     anatomicalSystem: '1. Analgésicos Narcóticos',
     therapeuticClass: 'Analgésicos opioides agonistas puros (Fenantrenos)',
@@ -77,10 +78,10 @@ export const ANALGESICOS_NARCOTICOS: Medication[] = [
   },
   {
     id: 'meperidina',
-    genericName: 'Meperidina (Petidina)',
-    commercialNames: ['Demerol', 'Dolantina'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Ampollas inyectables de Meperidina',
+    genericName: "Meperidina",
+    commercialNames: ["Demerol", "Dolantina"],
+    imageUrl: "https://www.kernpharma.com/sites/default/files/styles/max_575x575/public/productos/imagenes/dolantina-50-mgml-10-amp-1ml-sol-inyec-5308.jpeg?itok=NeG5EKmG",
+    imageAlt: "Meperidina - Presentación farmacológica",
     atcCode: 'N02AB02',
     anatomicalSystem: '1. Analgésicos Narcóticos',
     therapeuticClass: 'Analgésicos opioides agonistas de tipo fenilpiperidina',
@@ -146,10 +147,10 @@ export const ANALGESICOS_NARCOTICOS: Medication[] = [
   },
   {
     id: 'metadona',
-    genericName: 'Metadona Clorhidrato',
-    commercialNames: ['Dolophine', 'Metasedin', 'Methadose'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y solución oral de Metadona',
+    genericName: "Metadona",
+    commercialNames: ["Amidone", "Rubidexol"],
+    imageUrl: "https://www.plmconnection.com/plmservices/PharmaSearchEngine/Mexico/DEF/SIDEF/400x400/biogentec_amidone_tabletas_40mg_caja_con_100_tabletas.png",
+    imageAlt: "Metadona - Presentación farmacológica",
     atcCode: 'N07BC02',
     anatomicalSystem: '1. Analgésicos Narcóticos',
     therapeuticClass: 'Analgésicos opioides agonistas sintéticos (Difenilheptanos)',
@@ -216,10 +217,10 @@ export const ANALGESICOS_NARCOTICOS: Medication[] = [
   },
   {
     id: 'pentazocina',
-    genericName: 'Pentazocina',
-    commercialNames: ['Talwin', 'Fortal', 'Sosegon'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y ampollas de Pentazocina',
+    genericName: "Pentazocina",
+    commercialNames: ["Talwin"],
+    imageUrl: "https://static.wixstatic.com/media/78e2ab_3b8e6855192f48759149e7b4844c4738~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+    imageAlt: "Pentazocina - Presentación farmacológica",
     atcCode: 'N02AD01',
     anatomicalSystem: '1. Analgésicos Narcóticos',
     therapeuticClass: 'Analgésicos opioides agonistas-antagonistas mixtos (Benzomorfanos)',
@@ -283,10 +284,10 @@ export const ANALGESICOS_NARCOTICOS: Medication[] = [
   },
   {
     id: 'buprenorfina',
-    genericName: 'Buprenorfina',
-    commercialNames: ['Transtec', 'Subutex', 'Suboxone (+ Naloxona)', 'Buprex', 'Temgesic'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Parches transdérmicos y comprimidos sublinguales de Buprenorfina',
+    genericName: "Buprenorfina",
+    commercialNames: ["Transtec", "Dosfol", "Brospina"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7502209290532.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144",
+    imageAlt: "Buprenorfina - Presentación farmacológica",
     atcCode: 'N02AE01',
     anatomicalSystem: '1. Analgésicos Narcóticos',
     therapeuticClass: 'Analgésicos opioides agonistas parciales de alta afinidad',
@@ -351,10 +352,10 @@ export const ANALGESICOS_NARCOTICOS: Medication[] = [
   },
   {
     id: 'nalbufina',
-    genericName: 'Nalbufina Clorhidrato',
-    commercialNames: ['Nubain', 'Nalbufina Richmond', 'Nalbufina Chobet'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Ampollas inyectables de Nalbufina',
+    genericName: "Nalbufina",
+    commercialNames: ["Bufigen", "NALCRYN SP"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7501125113604.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265",
+    imageAlt: "Nalbufina - Presentación farmacológica",
     atcCode: 'N02AF02',
     anatomicalSystem: '1. Analgésicos Narcóticos',
     therapeuticClass: 'Analgésicos opioides agonistas kappa y antagonistas mu',

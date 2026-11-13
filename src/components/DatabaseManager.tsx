@@ -12,10 +12,16 @@ import {
   Eye, 
   Copy,
   Check,
-  X
+  X,
+  Share2,
+  ClipboardPaste
 } from 'lucide-react';
 import { Medication } from '../types/medication';
-import { exportDatabaseToJson, importDatabaseFromJson } from '../services/storageService';
+import {
+  exportDatabaseToJson,
+  importDatabaseFromJson,
+  buildCustomChangesPayload
+} from '../services/storageService';
 
 interface DatabaseManagerProps {
   medications: Medication[];
@@ -43,11 +49,16 @@ export const DatabaseManager: React.FC<DatabaseManagerProps> = ({
   const [statusMessage, setStatusMessage] = useState<{ text: string; type: 'success' | 'error' } | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+  const [copiedChanges, setCopiedChanges] = useState(false);
+  const [showPasteBox, setShowPasteBox] = useState(false);
+  const [pastedJson, setPastedJson] = useState('');
 
   // Stats
   const customCount = medications.filter(m => m.isCustom).length;
   const highAlertCount = medications.filter(m => m.highAlertMedicine).length;
   const totalInteractions = medications.reduce((acc, m) => acc + m.interactions.length, 0);
+  const changesPayload = buildCustomChangesPayload(medications);
+  const pendingChangesCount = changesPayload.modifiedOrAdded.length + changesPayload.deletedIds.length;
 
   const handleExport = () => {
     exportDatabaseToJson(medications);
@@ -56,6 +67,65 @@ export const DatabaseManager: React.FC<DatabaseManagerProps> = ({
       type: 'success'
     });
     setTimeout(() => setStatusMessage(null), 4000);
+  };
+
+  const handleCopyChanges = async () => {
+    try {
+      const jsonStr = JSON.stringify(changesPayload, null, 2);
+      await navigator.clipboard.writeText(jsonStr);
+      setCopiedChanges(true);
+      setStatusMessage({
+        text: `Cambios copiados al portapapeles (${changesPayload.modifiedOrAdded.length} modificados/agregados, ${changesPayload.deletedIds.length} eliminados). Pégalos en el chat para fijarlos en la página publicada.`,
+        type: 'success'
+      });
+      setTimeout(() => {
+        setCopiedChanges(false);
+        setStatusMessage(null);
+      }, 6000);
+    } catch {
+      setStatusMessage({
+        text: 'No se pudo copiar automáticamente al portapapeles. Usa "Descargar solo cambios (.json)".',
+        type: 'error'
+      });
+      setTimeout(() => setStatusMessage(null), 5000);
+    }
+  };
+
+  const handleDownloadChanges = () => {
+    const jsonStr = JSON.stringify(changesPayload, null, 2);
+    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(jsonStr);
+    const downloadAnchor = document.createElement('a');
+    const date = new Date().toISOString().slice(0, 10);
+    downloadAnchor.setAttribute('href', dataStr);
+    downloadAnchor.setAttribute('download', `farmaworld_cambios_${date}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    setStatusMessage({
+      text: 'Archivo de cambios descargado. Puedes adjuntarlo o importarlo en la página publicada.',
+      type: 'success'
+    });
+    setTimeout(() => setStatusMessage(null), 5000);
+  };
+
+  const handleApplyPastedJson = () => {
+    if (!pastedJson.trim()) return;
+    try {
+      const updated = importDatabaseFromJson(pastedJson.trim(), importMode);
+      onUpdateMedications(updated);
+      setPastedJson('');
+      setShowPasteBox(false);
+      setStatusMessage({
+        text: `Cambios aplicados exitosamente (${updated.length} fármacos activos).`,
+        type: 'success'
+      });
+    } catch (err) {
+      setStatusMessage({
+        text: err instanceof Error ? err.message : 'El texto pegado no es un JSON válido.',
+        type: 'error'
+      });
+    }
+    setTimeout(() => setStatusMessage(null), 5000);
   };
 
   const handleFileImport = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -155,6 +225,43 @@ export const DatabaseManager: React.FC<DatabaseManagerProps> = ({
         </div>
       </div>
 
+      {/* Publish / Sync Browser Changes Panel */}
+      <div className="bg-sky-50/70 dark:bg-sky-950/35 border border-sky-200 dark:border-sky-800/80 rounded-xl p-4 sm:p-5 shadow-xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <Share2 className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" />
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                Publicar tus cambios de imágenes y nombres en la web ({pendingChangesCount} cambio{pendingChangesCount === 1 ? '' : 's'} local{pendingChangesCount === 1 ? '' : 'es'})
+              </h3>
+            </div>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+              Las ediciones que realizas desde el formulario se guardan únicamente en la memoria local de este navegador. Para que todos los visitantes vean tus nombres e imágenes en la página publicada, copia tus cambios y pégalos en el chat para integrarlos al catálogo oficial, o descárgalos para importarlos en la página publicada.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <button
+              onClick={handleCopyChanges}
+              disabled={pendingChangesCount === 0}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-white bg-sky-600 hover:bg-sky-700 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-sky-500 dark:hover:bg-sky-600 rounded-lg transition-colors shadow-xs"
+            >
+              {copiedChanges ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copiedChanges ? '¡Cambios copiados!' : 'Copiar cambios (JSON)'}</span>
+            </button>
+
+            <button
+              onClick={handleDownloadChanges}
+              disabled={pendingChangesCount === 0}
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-sky-800 dark:text-sky-200 bg-white dark:bg-slate-900 border border-sky-300 dark:border-sky-700 hover:bg-sky-50 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Descargar solo cambios</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Backup and Restore Controls */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
         
@@ -190,10 +297,10 @@ export const DatabaseManager: React.FC<DatabaseManagerProps> = ({
               Restaurar / Importar Archivo
             </h3>
             <p className="text-slate-500 dark:text-slate-300 leading-relaxed mb-3">
-              Cargue un archivo JSON previamente exportado para enriquecer la base de datos farmacológica.
+              Cargue un archivo JSON o pegue un paquete de cambios exportado desde la vista previa.
             </p>
 
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-3">
               <label className="flex items-center gap-1 cursor-pointer">
                 <input
                   type="radio"
@@ -215,6 +322,35 @@ export const DatabaseManager: React.FC<DatabaseManagerProps> = ({
                 <span className="text-[11px] text-slate-700 dark:text-slate-200">Reemplazar todo</span>
               </label>
             </div>
+
+            {showPasteBox && (
+              <div className="mb-3 space-y-2">
+                <textarea
+                  value={pastedJson}
+                  onChange={(e) => setPastedJson(e.target.value)}
+                  placeholder='Pega aquí el JSON copiado...'
+                  rows={3}
+                  className="w-full p-2 text-[11px] font-mono bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                />
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleApplyPastedJson}
+                    className="flex-1 py-1.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg text-[11px]"
+                  >
+                    Aplicar JSON
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowPasteBox(false);
+                      setPastedJson('');
+                    }}
+                    className="px-2.5 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold rounded-lg text-[11px]"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           <input
@@ -224,13 +360,22 @@ export const DatabaseManager: React.FC<DatabaseManagerProps> = ({
             onChange={handleFileImport}
             className="hidden"
           />
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-colors shadow-xs"
-          >
-            <Upload className="w-3.5 h-3.5" />
-            <span>Seleccionar archivo JSON</span>
-          </button>
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-colors shadow-xs"
+            >
+              <Upload className="w-3.5 h-3.5" />
+              <span>Seleccionar archivo JSON</span>
+            </button>
+            <button
+              onClick={() => setShowPasteBox(prev => !prev)}
+              className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold rounded-lg transition-colors"
+            >
+              <ClipboardPaste className="w-3.5 h-3.5" />
+              <span>{showPasteBox ? 'Ocultar cuadro de pegado' : 'Pegar JSON directamente'}</span>
+            </button>
+          </div>
         </div>
 
         {/* Reset to Standard Defaults Card */}

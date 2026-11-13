@@ -1,15 +1,15 @@
 import { Medication } from '../../types/medication';
 
-const VIAL_IMG = '/src/assets/images/medication_ampoule_vial_1793310913789.jpg';
-const BLISTER_IMG = '/src/assets/images/medication_blister_tablets_1793310902804.jpg';
+const VIAL_IMG = '/assets/images/medication_ampoule_vial_1793310913789.jpg';
+const BLISTER_IMG = '/assets/images/medication_blister_tablets_1793310902804.jpg';
 
 export const CORTICOSTEROIDES: Medication[] = [
   {
     id: 'dexametasona',
-    genericName: 'Dexametasona Fosfato Sódico',
-    commercialNames: ['Decadron', 'Fortecortin', 'Dexacort', 'Alin'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Ampollas y comprimidos de Dexametasona',
+    genericName: "Dexametasona Fosfato Sódico",
+    commercialNames: ["Dexacort", "Alin"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7501088503825.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265",
+    imageAlt: "Dexametasona Fosfato Sódico - Presentación farmacológica",
     atcCode: 'H02AB02',
     anatomicalSystem: '3. Corticosteroides',
     therapeuticClass: 'Glucocorticoides sintéticos de acción prolongada y muy alta potencia',
@@ -76,10 +76,10 @@ export const CORTICOSTEROIDES: Medication[] = [
   },
   {
     id: 'hidrocortisona',
-    genericName: 'Hidrocortisona (Cortisol)',
-    commercialNames: ['Actocortina', 'Solu-Cortef', 'Hidraltisona', 'Lactisona'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Viales inyectables y crema de Hidrocortisona',
+    genericName: "Hidrocortisona (Cortisol)",
+    commercialNames: ["Flemex", "Locoid"],
+    imageUrl: "https://www.plmconnection.com/plmservices/PharmaSearchEngine/Mexico/DEF/SIDEF/400x400/kener_flemex_soluinyec_100mg_2ml.png",
+    imageAlt: "Hidrocortisona (Cortisol) - Presentación farmacológica",
     atcCode: 'H02AB09',
     anatomicalSystem: '3. Corticosteroides',
     therapeuticClass: 'Glucocorticoides naturales de acción corta con actividad mineralocorticoide',
@@ -145,10 +145,10 @@ export const CORTICOSTEROIDES: Medication[] = [
   },
   {
     id: 'prednisona',
-    genericName: 'Prednisona',
-    commercialNames: ['Dacortin', 'Prednisona Alonga', 'Deltasone', 'Meticorten'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos ranurados de Prednisona',
+    genericName: "Prednisona",
+    commercialNames: ["Dacortin", "Deltasone", "Meticorten"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_eJoLWzdyO92HtSnpozH_4AYX6WFk0SOed57B3DTvCjafjSs3iw9ENPo&s=10",
+    imageAlt: "Prednisona - Presentación farmacológica",
     atcCode: 'H02AB07',
     anatomicalSystem: '3. Corticosteroides',
     therapeuticClass: 'Glucocorticoides sintéticos de acción intermedia para administración oral',

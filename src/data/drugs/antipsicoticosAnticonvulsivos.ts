@@ -1,16 +1,16 @@
 import { Medication } from '../../types/medication';
 
-const BLISTER_IMG = '/src/assets/images/medication_blister_tablets_1793310902804.jpg';
-const VIAL_IMG = '/src/assets/images/medication_ampoule_vial_1793310913789.jpg';
+const BLISTER_IMG = '/assets/images/medication_blister_tablets_1793310902804.jpg';
+const VIAL_IMG = '/assets/images/medication_ampoule_vial_1793310913789.jpg';
 
 export const ANTIPSICOTICOS_ANTICONVULSIVOS: Medication[] = [
   // --- 6. ANTIPSICÓTICOS ---
   {
     id: 'clorpromazina',
-    genericName: 'Clorpromazina Clorhidrato (Fenotiazinas)',
-    commercialNames: ['Largactil', 'Thorazine'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y ampollas de Clorpromazina',
+    genericName: "Clorpromazina",
+    commercialNames: ["Largactil", "Thorazine"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWYxLeYnfVPPejKFMr6rahRAm3NbnB705_vshpJPhZleBxNA81dN67ufg&s=10",
+    imageAlt: "Clorpromazina - Presentación farmacológica",
     atcCode: 'N05AA01',
     anatomicalSystem: '6. Antipsicóticos',
     therapeuticClass: 'Antipsicóticos típicos de primera generación / Fenotiazinas alifáticas de baja potencia',
@@ -77,10 +77,10 @@ export const ANTIPSICOTICOS_ANTICONVULSIVOS: Medication[] = [
   },
   {
     id: 'haloperidol',
-    genericName: 'Haloperidol (Butirofenonas)',
-    commercialNames: ['Haldol', 'Haloperil', 'Haldol Decanoato'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Ampollas inyectables y gotas de Haloperidol',
+    genericName: "Haloperidol",
+    commercialNames: ["Haldol", "Haloperil"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7501384541521.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265",
+    imageAlt: "Haloperidol - Presentación farmacológica",
     atcCode: 'N05AD01',
     anatomicalSystem: '6. Antipsicóticos',
     therapeuticClass: 'Antipsicóticos típicos de primera generación / Butirofenonas de alta potencia',
@@ -151,10 +151,10 @@ export const ANTIPSICOTICOS_ANTICONVULSIVOS: Medication[] = [
   // --- 2.7 ANTICONVULSIVOS ---
   {
     id: 'carbamazepina',
-    genericName: 'Carbamazepina',
-    commercialNames: ['Tegretol', 'Carbatrol', 'Epilepsin', 'Actinerval'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y jarabe de Carbamazepina',
+    genericName: "Carbamazepina",
+    commercialNames: ["Tegretol", "Carbatrol"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7501094915810.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144",
+    imageAlt: "Carbamazepina - Presentación farmacológica",
     atcCode: 'N03AF01',
     anatomicalSystem: '2.7 Anticonvulsivos',
     therapeuticClass: 'Antiepilépticos derivados de la carboxamida / Bloqueantes de canales de sodio',
@@ -221,10 +221,10 @@ export const ANTIPSICOTICOS_ANTICONVULSIVOS: Medication[] = [
   },
   {
     id: 'fenitoina',
-    genericName: 'Fenitoína Sódica (Difenilhidantoína)',
-    commercialNames: ['Epamin', 'Dilantin', 'Epanutin', 'Fenitoina Richmond'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Viales inyectables y cápsulas de Fenitoína',
+    genericName: "Fenitoína",
+    commercialNames: ["Epamin", "Dilantin"],
+    imageUrl: "https://www.yza.mx/dw/image/v2/BDPM_PRD/on/demandware.static/-/Sites-masterCatalog_YzaMexico/default/dw195950b4/images/large/840149675390_1.jpg?sw=1000&sh=1000",
+    imageAlt: "Fenitoína - Presentación farmacológica",
     atcCode: 'N03AB02',
     anatomicalSystem: '2.7 Anticonvulsivos',
     therapeuticClass: 'Antiepilépticos derivados de la hidantoína / Bloqueantes de canales de sodio',
@@ -290,10 +290,10 @@ export const ANTIPSICOTICOS_ANTICONVULSIVOS: Medication[] = [
   },
   {
     id: 'etosuximida',
-    genericName: 'Etosuximida',
-    commercialNames: ['Zarontin', 'Asonor', 'Petnidan', 'Ethosuximide'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Cápsulas y jarabe de Etosuximida',
+    genericName: "Etosuximida",
+    commercialNames: ["Zarontin"],
+    imageUrl: "https://www.farmatodo.com.ar/_next/image?url=https%3A%2F%2Fproducts-images.farmatodo.com.ar%2FLoCmQEhs_vcdAYYBtWViHAB3CXIi9a_40ptTBXxSyM8nRu3ICi3zjT_g8pUOBlxz&w=1200&q=85",
+    imageAlt: "Etosuximida - Presentación farmacológica",
     atcCode: 'N03AD01',
     anatomicalSystem: '2.7 Anticonvulsivos',
     therapeuticClass: 'Antiepilépticos derivados de la succinimida / Bloqueantes de canales de calcio tipo T',
@@ -353,10 +353,10 @@ export const ANTIPSICOTICOS_ANTICONVULSIVOS: Medication[] = [
   },
   {
     id: 'acido-valproico',
-    genericName: 'Ácido Valproico / Valproato de Sodio',
-    commercialNames: ['Depakine', 'Depakote', 'Valcote', 'Epival', 'Convulex'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y solución inyectable de Ácido Valproico',
+    genericName: "Ácido Valproico / Valproato de Sodio",
+    commercialNames: ["Depakene", "Depakote"],
+    imageUrl: "https://www.abbottienda.com/4540-large_default/depakene-250-mg-c60-caps.jpg",
+    imageAlt: "Ácido Valproico / Valproato de Sodio - Presentación farmacológica",
     atcCode: 'N03AG01',
     anatomicalSystem: '2.7 Anticonvulsivos',
     therapeuticClass: 'Antiepilépticos de amplio espectro y estabilizadores del ánimo / Ácidos carboxílicos',

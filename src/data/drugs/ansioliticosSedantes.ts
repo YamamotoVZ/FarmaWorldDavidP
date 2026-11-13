@@ -1,15 +1,15 @@
 import { Medication } from '../../types/medication';
 
-const BLISTER_IMG = '/src/assets/images/medication_blister_tablets_1793310902804.jpg';
-const VIAL_IMG = '/src/assets/images/medication_ampoule_vial_1793310913789.jpg';
+const BLISTER_IMG = '/assets/images/medication_blister_tablets_1793310902804.jpg';
+const VIAL_IMG = '/assets/images/medication_ampoule_vial_1793310913789.jpg';
 
 export const ANSIOLITICOS_SEDANTES: Medication[] = [
   {
     id: 'diazepam',
-    genericName: 'Diazepam',
-    commercialNames: ['Valium', 'Stesolid', 'Ansium', 'Pacium'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y ampollas de Diazepam',
+    genericName: "Diazepam",
+    commercialNames: ["Valium", "Ifafonal"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7501249603036_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265",
+    imageAlt: "Diazepam - Presentación farmacológica",
     atcCode: 'N05BA01',
     anatomicalSystem: '2.4 Ansiolíticos y Sedantes-Hipnóticos',
     therapeuticClass: 'Benzodiacepinas de acción prolongada',
@@ -145,10 +145,10 @@ export const ANSIOLITICOS_SEDANTES: Medication[] = [
   },
   {
     id: 'lorazepam',
-    genericName: 'Lorazepam',
-    commercialNames: ['Ativan', 'Orfidal', 'Idalprem', 'Donix'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y ampollas de Lorazepam',
+    genericName: "Lorazepam",
+    commercialNames: ["Ativan", "Apolazam"],
+    imageUrl: "https://farmaciasanjorge.com/cdn/shop/products/7501287619204_1024x.png?v=1706131029",
+    imageAlt: "Lorazepam - Presentación farmacológica",
     atcCode: 'N05BA06',
     anatomicalSystem: '2.4 Ansiolíticos y Sedantes-Hipnóticos',
     therapeuticClass: 'Benzodiacepinas de acción intermedia sin metabolitos activos',
@@ -281,10 +281,10 @@ export const ANSIOLITICOS_SEDANTES: Medication[] = [
   },
   {
     id: 'clonazepam',
-    genericName: 'Clonazepam',
-    commercialNames: ['Rivotril', 'Klonopin', 'Ravotril', 'Clonagin'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y gotas de Clonazepam',
+    genericName: "Clonazepam",
+    commercialNames: ["Rivotril", "Klodex"],
+    imageUrl: "https://production-media.fahorro.com/media/catalog/product/7/5/7501249602176_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144",
+    imageAlt: "Clonazepam - Presentación farmacológica",
     atcCode: 'N03AE01',
     anatomicalSystem: '2.4 Ansiolíticos y Sedantes-Hipnóticos',
     therapeuticClass: 'Benzodiacepinas de acción prolongada con alta potencia anticonvulsivante',
@@ -351,10 +351,10 @@ export const ANSIOLITICOS_SEDANTES: Medication[] = [
   },
   {
     id: 'fenobarbital',
-    genericName: 'Fenobarbital (Barbitúricos)',
-    commercialNames: ['Luminal', 'Luminaletas', 'Gardenal'],
-    imageUrl: BLISTER_IMG,
-    imageAlt: 'Comprimidos y ampollas de Fenobarbital',
+    genericName: "Fenobarbital",
+    commercialNames: ["Luminal", "Luminaletas", "Gardenal"],
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQi0wjuJwWLvkUydlpVjdnc4JTaB1VSl3gLMo3yxbrjZa8DapcjXIgMJ4&s=10",
+    imageAlt: "Fenobarbital - Presentación farmacológica",
     atcCode: 'N03AA02',
     anatomicalSystem: '2.4 Ansiolíticos y Sedantes-Hipnóticos',
     therapeuticClass: 'Sedantes-hipnóticos y antiepilépticos / Barbitúricos de acción prolongada',
@@ -485,10 +485,10 @@ export const ANSIOLITICOS_SEDANTES: Medication[] = [
   },
   {
     id: 'tiopental',
-    genericName: 'Tiopental Sódico (Tiopentona)',
-    commercialNames: ['Pentothal Sódico', 'Trapanal', 'Tiopental Bioquimico'],
-    imageUrl: VIAL_IMG,
-    imageAlt: 'Frasco ampolla de Tiopental sódico polvo liofilizado',
+    genericName: "Tiopental",
+    commercialNames: ["Pentothal Sódico", "Fenabbott"],
+    imageUrl: "https://gruporfp.vtexassets.com/arquivos/ids/7002960/7501033920363_01.jpg?v=639183640687600000",
+    imageAlt: "Tiopental - Presentación farmacológica",
     atcCode: 'N01AF03',
     anatomicalSystem: '2.4 Ansiolíticos y Sedantes-Hipnóticos',
     therapeuticClass: 'Anestésicos generales y sedantes / Tiobarbitúricos de acción ultracorta',
